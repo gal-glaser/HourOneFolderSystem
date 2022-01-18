@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>main\{{path}}</h1>
+    {% if folders|length > 0 %}
+    <h3>Folders:</h3>
+    {% for folder in folders %}
+    <li><a href="{{ '\\?path='+path+folder+'\\' }}">{{folder}}</a></li>
+    {% endfor %} {% endif %} {% if files|length > 0 %}
+    <h3>Files:</h3>
+    {% for file in files %}
+    <li><a href="{{ '\\?path='+path+file }}">{{file}}</a></li>
+    {% endfor %} {% endif %}
+  </body>
+</html>
